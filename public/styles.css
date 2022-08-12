@@ -118,27 +118,33 @@ footer {
   100% {
     border-radius: 50%;
     transform: rotate(0deg);
-    background-color: #fe441d;
+    background-color: #00183b;
   }
   50% {
     border-radius: 0%;
     transform: rotate(180deg);
-    background-color: yellow;
+    background-color: #009378;
   }
 }
 
 #task-view {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  background-color: black;
+  margin: 20px;
+  height: 75vh;
 }
 
 .card {
   font-size: 30px;
-  border: 3px solid white;
+  color: white;
+  background-color: #00183b;
+  border: 3px solid #009378;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .card p {
@@ -149,7 +155,7 @@ footer {
   margin: 0px;
   font-size: 15px;
   align-self: flex-start;
-  border: 2px solid white;
+  border: 2px solid #009378;
   padding: 5px;
   border-radius: 9px
 }
@@ -179,6 +185,7 @@ footer {
   font-size: 17px;
   margin: 9px 3px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Change the color of links on hover */
@@ -196,4 +203,6 @@ footer {
 .topnav h1 {
   margin-right: auto;
 }
+
+
 
