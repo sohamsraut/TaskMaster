@@ -186,6 +186,7 @@ footer {
   margin: 9px 3px;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 /* Change the color of links on hover */
