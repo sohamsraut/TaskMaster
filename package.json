@@ -1,7 +1,7 @@
 {
   "name": "taskmaster",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Second version of my task manager API, TaskMaster\r - Also created a website for the task manager",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,16 @@
   "dependencies": {
     "express": "^4.18.1",
     "multer": "^1.4.5-lts.1",
-    "sqlite": "^4.1.1",
-    "sqlite3": "^5.0.8"
-  }
+    "nodemon": "^2.0.19",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.0.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohamsraut/task-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sohamsraut/task-manager/issues"
+  },
+  "homepage": "https://github.com/sohamsraut/task-manager#readme"
 }
