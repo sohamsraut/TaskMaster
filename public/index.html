@@ -15,18 +15,18 @@
     <!--"https://www.vecteezy.com/free-vector/blue-green-background" Blue Green Background Vectors by Vecteezy-->
     <nav class="topnav">
       <h1>TaskMaster</h1>
-      <a href="#auth" class="highlight login">Login</a>
-      <a href="#new-user" class="signup">Sign Up</a>
+      <a class="highlight login">Login</a>
+      <a class="signup">Sign Up</a>
     </nav>
-    <header>
+    <header class="">
       <p class="subtitle">One place to manage all your tasks!</p>
       <p>
         No more wasting time remembering what things you have left to do. Efficiently manage your
         to-do list with TaskMaster.
         </p>
       <div>
-        <a href="#new-user" class="highlight signup">Get Started</a>
-        <a href="#auth" class="login">Log in</a>
+        <a class="highlight signup">Get Started</a>
+        <a class="login">Log in</a>
       </div>
     </header>
     <main>
@@ -42,7 +42,7 @@
           </form>
           <div>
             <button id="new">New User?</button>
-            <button id="home">Back to Home</button>
+            <button id="home">Home</button>
           </div>
         </section>
         <section id="new-user" class="hidden">
@@ -54,7 +54,10 @@
             <input type="password" id="pass">
             <button id="new-submit">Create Account</button>
           </form>
-          <button id="back">Back</button>
+          <div>
+            <button id="back">Back</button>
+            <button id="home-2">Home</button>
+          </div>
         </section>
         <section id="error-auth" class="hidden">
           <!--js-->
