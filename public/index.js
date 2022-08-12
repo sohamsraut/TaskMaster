@@ -17,6 +17,7 @@
     }
     qs("h1").addEventListener("click", homeView);
     id("home").addEventListener("click", homeView);
+    id("home-2").addEventListener("click", homeView);
     qs("#auth form").addEventListener('submit', loginCheck);
     id("new").addEventListener("click", toggleNew);
     id("back").addEventListener("click", toggleNew);
@@ -46,7 +47,7 @@
         .then(statusCheck)
         .then(res => res.json())
         .then(showTasks)
-        .catch(console.error);
+        .catch(handleError);
     }
   }
 
@@ -69,6 +70,11 @@
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].value = "";
     }
+  }
+
+  function handleError(error) {
+    id("error-auth").classList.remove("hidden");
+    id("error-auth").textContent = error;
   }
 
     /**
