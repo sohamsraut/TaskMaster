@@ -36,6 +36,21 @@ app.post("/tasks/all", async (req, res) => {
 
 });
 
+app.post("/tasks/delete", async (req, res) => {
+  try {
+    let user = req.body.user;
+    let taskId = req.body.taskId
+    let db = await getDBConnection();
+    let query = "DELETE from tasks where user=? and taskId=?";
+    let result = await db.run(query, [user, taskId]);
+    await db.close();
+    res.type("text");
+    res.send("Task deleted.");
+  } catch (err) {
+    res.status(500).send("Internal server error");
+  }
+});
+
 async function getUserTasks(userId) {
   let db = await getDBConnection();
   let query = "Select * from tasks where user = ?;";
