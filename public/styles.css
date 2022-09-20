@@ -55,6 +55,7 @@ h1 {
   margin-top: 5%;
   border: 5px solid #009378;
   background-color: #001426;
+  opacity: 95%;
 }
 
 #intro-view section label {
@@ -129,11 +130,18 @@ footer {
 
 #task-view {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
   background-color: black;
   margin: 20px;
   height: 75vh;
+  opacity: 80%;
+}
+
+#task-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -145,6 +153,8 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  box-shadow: 0;
+  transition: box-shadow 0.2s linear;
 }
 
 .card p {
@@ -205,5 +215,21 @@ footer {
   margin-right: auto;
 }
 
+.selected {
+  box-shadow: 5px 5px 0px 0px #f2f2f2;
+}
 
+#control-panel {
+  display: flex;
+  font-size: 25px;
+  padding: 0px 10px;
+}
 
+#control-panel div {
+  margin-left: auto;
+}
+
+#control-panel button {
+  padding: 0px 15px;
+  width: 80px;
+}
