@@ -18,7 +18,7 @@
       <a class="highlight login">Login</a>
       <a class="signup">Sign Up</a>
     </nav>
-    <header class="">
+    <header>
       <p class="subtitle">One place to manage all your tasks!</p>
       <p>
         No more wasting time remembering what things you have left to do. Efficiently manage your
@@ -68,10 +68,19 @@
         </div>
       </article>
       <article id="task-view" class="hidden">
-        <section class="card">
-          <p class="category">Important</p>
-          <p>Complete TaskMaster</p>
-        </section>
+        <article id="control-panel">
+          <p id="message">Welcome!</p>
+          <div>
+            <button id="new-task">New</button>
+            <button id="delete-task">Delete</button>
+          </div>
+        </article>
+        <article id="task-cards">
+          <section class="card">
+            <p class="category">Important</p>
+            <p>Complete TaskMaster</p>
+          </section>
+      </article>
       </article>
     </main>
     <footer>
