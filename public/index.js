@@ -3,6 +3,7 @@
 (function() {
 
   window.addEventListener('load', init);
+  let user;
 
   function init() {
     let login = qsa("a.login");
@@ -21,6 +22,8 @@
     qs("#auth form").addEventListener('submit', loginCheck);
     id("new").addEventListener("click", toggleNew);
     id("back").addEventListener("click", toggleNew);
+    id("new-task").addEventListener("click", newTaskPage);
+    id("delete-task").addEventListener("click", deleteSelected);
   }
 
   function homeView() {
@@ -53,14 +56,32 @@
 
   function showTasks(responseData) {
     id("intro-view").classList.add("hidden");
-    console.log(responseData);
+    id("task-view").classList.remove("hidden");
+    id("loading").classList.add("hidden");
+    user = responseData.user;
     for (let i = 0; i < responseData.length; i++) {
-      id("task-view").appendChild(createCard(i));
+      id("task-cards").appendChild(createCard(responseData[i]));
     }
   }
 
   function createCard(task) {
     let card = gen("section");
+    card.classList.add("card");
+    card.id = task.taskId;
+
+    let category = gen("p");
+    category.classList.add("category");
+    category.textContent = task.category;
+
+    let desc = gen("p");
+    desc.textContent = task.taskname;
+
+    card.appendChild(category);
+    card.appendChild(desc);
+    card.addEventListener("click", function() {
+      this.classList.toggle("selected");
+    });
+    return card;
   }
 
   function toggleNew() {
@@ -69,6 +90,16 @@
     let inputs = qsa("#intro-view input");
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].value = "";
+    }
+  }
+
+  function deleteSelected() {
+    let selected = qsa(".selected");
+    if (selected.length === 0) {
+      id("message").textContent = "No tasks selected";
+    } else {
+      let data = new FormData();
+      data.append("user", user);
     }
   }
 
@@ -84,7 +115,6 @@
    */
      async function statusCheck(res) {
       if (!res.ok) {
-        id("loading").classList.add("hidden");
         throw new Error(await res.text());
       }
       return res;
